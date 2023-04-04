@@ -1,26 +1,36 @@
+import { WD40 } from './WD40';
+
 // module aliases
 var Engine = Matter.Engine,
-    Render = Matter.Render,
-    Runner = Matter.Runner,
-    Bodies = Matter.Bodies,
-    Composite = Matter.Composite;
+  Render = Matter.Render,
+  Runner = Matter.Runner,
+  Composite = Matter.Composite;
 
 // create an engine
 var engine = Engine.create();
+engine.gravity.y = -0.04
 
 // create a renderer
-var render = Render.create({
-    element: document.body,
-    engine: engine
+let render = Render.create({
+  // element: document.body,
+  engine: engine,
+  options: {
+    width: $(window).width()!,
+    height: $(window).height()!,
+  }
 });
 
-// create two boxes and a ground
-var boxA = Bodies.rectangle(400, 200, 80, 80);
-var boxB = Bodies.rectangle(450, 50, 80, 80);
-var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+// create WDBox
+let wd40 = new WD40({
+  engine: engine,
+  selector: 'div, li, td'
+});
 
+let ground = Matter.Bodies.rectangle(
+  $(window).width()! / 2, -50, $(window).width()!, 100, { isStatic: true }
+);
 // add all of the bodies to the world
-Composite.add(engine.world, [boxA, boxB, ground]);
+Composite.add(engine.world, [ground]);
 
 // run the renderer
 Render.run(render);
@@ -30,3 +40,9 @@ var runner = Runner.create();
 
 // run the engine
 Runner.run(runner, engine);
+
+function step() {
+  wd40.render();
+  requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
