@@ -18,6 +18,8 @@
 
 安装油猴脚本：https://greasyfork.org/zh-CN/scripts/463273-wd-40
 
+测试靶场：https://mirrors.tuna.tsinghua.edu.cn/
+
 ## 开发 / Development
 
 1. 运行 `git clone` 和 `npm install` 安装依赖

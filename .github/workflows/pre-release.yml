@@ -16,6 +16,7 @@ jobs:
           with:
             node-version: 16
             cache: npm
+      - run: "ls"
       - name: "Install"
         run: "npm install"
       - name: "Build"
