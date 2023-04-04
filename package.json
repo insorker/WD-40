@@ -1,0 +1,27 @@
+{
+  "name": "wd-40",
+  "version": "1.0.0",
+  "description": "浮动点击的元素（致敬清华源23年愚人节彩蛋）>_<",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "rollup -cw --bundleConfigAsCjs",
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "author": "insorker",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/matter-js": "^0.18.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "matter-js": "^0.19.0",
+    "rollup": "^3.20.2",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^2.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
