@@ -2,21 +2,23 @@
 
 ## 前言
 
+[书接上文](https://mirrors.tuna.tsinghua.edu.cn/news/#april-fool-wandering-mirrors)
+
 很遗憾没能在4月1号当天体验到这个彩蛋，只是偶然 B 站刷视频给我刷到了。本来只是图一乐，看评论区大神讨论感觉好像可行性挺高的（好像要长脑子了>_<），然后就上 google 搜了搜，您猜怎么着：
 
 碰巧，看到了这样一个问答 [Using Matter.js to render to the DOM or React](https://stackoverflow.com/questions/63906218/using-matter-js-to-render-to-the-dom-or-react) 。
 
-碰巧，这个回答是两年半前（为什么碰巧呢？）
+碰巧，这个回答是两年半前
 
 碰巧，Matter.js 官网有类似效果的展示 [gyro](https://brm.io/matter-js/demo/#gyro)
 
-大概就确定了技术栈：Matter.js + JQuery.js，但是怎么作用在清华源上呢？我又偷不到清华的服务器，也不好意思直接去抢，所以最后想来想去，只能用油猴脚本的方式来骗、来偷袭了。
+大概就确定了技术栈：Matter.js + JQuery.js，但是怎么作用在清华源上呢？我又偷不到清华的服务器，也不好意思直接去抢，最主要来回还得坐高铁没人给我报销路费，所以没去。思来想去，只能用油猴脚本的方式来骗、来偷袭了。
 
 ## 使用 / Usage
 
-> 目前仅用于油猴脚本使用
+> 目前仅用于油猴脚本
 
-安装油猴脚本：https://greasyfork.org/zh-CN/scripts/463273-wd-40
+安装脚本：https://greasyfork.org/zh-CN/scripts/463273-wd-40
 
 测试靶场：https://mirrors.tuna.tsinghua.edu.cn/
 
@@ -28,7 +30,7 @@
 
 3. 测试 `npm run dev`
 
-如需测试油猴脚本，请选择“添加新脚本”，并填入以下内容：
+如需测试油猴脚本，请选择“添加新脚本”，填入以下内容，并修改`YOUR-GIT-REPOSITERY-PATH`：
 
 ```js
 // ==UserScript==

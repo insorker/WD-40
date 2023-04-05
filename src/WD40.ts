@@ -1,10 +1,15 @@
 import { WDBox } from "./component/box";
-import { WDConfig } from "./config.wd40";
+import Component from "./component/component"
+
+export interface WDConfig {
+  engine: Matter.Engine
+  selector: string
+}
 
 export class WD40 implements WDConfig {
   engine: Matter.Engine
   selector: string
-  boxes: WDBox[]
+  boxes: Component[]
 
   constructor(config: WDConfig) {
     this.engine = config.engine
