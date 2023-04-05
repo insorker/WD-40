@@ -25,11 +25,7 @@ jobs:
       - name: "Build"
         run: "npm run build"
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: ncipollo/release-action@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            dist/index.iife.js
+          artifacts: "dist/*.js"
+          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
