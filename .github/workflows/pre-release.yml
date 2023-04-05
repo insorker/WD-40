@@ -28,4 +28,3 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/*.js"
-          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
