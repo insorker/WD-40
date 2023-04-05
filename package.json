@@ -4,8 +4,8 @@
   "description": "浮动点击的元素（致敬清华源23年愚人节彩蛋）>_<",
   "main": "index.ts",
   "scripts": {
-    "dev": "rollup -cw --bundleConfigAsCjs",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "dev": "cross-env NODE_ENV=development rollup -cw --bundleConfigAsCjs",
+    "build": "cross-env NODE_ENV=production rollup -c --bundleConfigAsCjs"
   },
   "author": "insorker",
   "license": "MIT",

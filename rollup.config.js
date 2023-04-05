@@ -3,6 +3,10 @@ import resolve from '@rollup/plugin-node-resolve'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 
+const isDevelopment = () => {
+  return process.env.NODE_ENV == 'development';
+}
+
 export default {
   input: './src/index.ts',
   output: {
@@ -13,8 +17,8 @@ export default {
   plugins: [
     ts(),
     resolve(),
-    livereload('dist'),
-    serve({
+    isDevelopment() && livereload('dist'),
+    isDevelopment() && serve({
       open: true,
       port: 8020,
       openPage: '/index.html'
