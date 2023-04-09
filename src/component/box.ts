@@ -1,12 +1,14 @@
-import WDComponent from './component'
+import { WDBody, WDElem, WDComponent } from './component'
 
-export class WDBox implements WDComponent {
-  body: Matter.Body
-  elem: JQuery<HTMLElement>
+export class WDBox extends WDComponent {
+  body: WDBody
+  elem: WDElem
 
-  constructor(elem: JQuery<HTMLElement>) {
+  constructor(elem: WDElem) {
+    super();
+
     const offset = elem.offset()!;
-    const width = elem.width()!;
+    const width  = elem.width()!;
     const height = elem.height()!;
 
     this.body = Matter.Bodies.rectangle(
@@ -14,16 +16,8 @@ export class WDBox implements WDComponent {
     );
     this.elem = elem;
 
-    // replace the original element with empty div
-    elem.replaceWith(
-      $('<div></div>').css({
-        'width': width,
-        'height': height,
-      })
-    )
-
     // restyle element with absolute position
-    elem.css({
+    this.elem.css({
       'position': 'absolute',
       'top': offset.top,
       'left': offset.left,
@@ -34,8 +28,17 @@ export class WDBox implements WDComponent {
       'box-shadow': '0px 0px 10px rgba(0, 0, 0, 25%)'
     });
 
+    // replace the original element with empty div
     // move the original element to body
-    $('body').append(elem);
+    let replaceElem = 
+      $('<div></div>').css({
+        'width': width,
+        'height': height,
+      }).attr(
+        "WD-40-disable", "true"
+      );
+    let parentElem = $('body');
+    this.reposition(replaceElem, parentElem);
   }
 
   render() {

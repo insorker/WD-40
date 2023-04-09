@@ -1,5 +1,5 @@
 import { WDBox } from "./component/box";
-import Component from "./component/component"
+import { WDComponent } from "./component/component"
 
 export interface WDConfig {
   engine: Matter.Engine
@@ -9,7 +9,7 @@ export interface WDConfig {
 export class WD40 implements WDConfig {
   engine: Matter.Engine
   selector: string
-  boxes: Component[]
+  boxes: WDComponent[]
 
   constructor(config: WDConfig) {
     this.engine = config.engine
@@ -31,6 +31,9 @@ export class WD40 implements WDConfig {
         if (box.elem[0] == this) {
           return;
         }
+      }
+      if ($(this).attr("WD-40-disable")) {
+        return;
       }
 
       let box = new WDBox($(this));
