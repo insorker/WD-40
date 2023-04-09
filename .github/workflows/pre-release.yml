@@ -30,4 +30,4 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/*.js"
-          tag: "0.2.0-alpha"
+          tag: "0.3.0-alpha"
