@@ -34,9 +34,7 @@ export class WDBox extends WDComponent {
       $('<div></div>').css({
         'width': width,
         'height': height,
-      }).attr(
-        "WD-40-disable", "true"
-      );
+      })
     let parentElem = $('body');
     this.reposition(replaceElem, parentElem);
   }

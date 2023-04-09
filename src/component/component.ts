@@ -6,6 +6,9 @@ export abstract class WDComponent {
   abstract elem: WDElem
 
   reposition(replaceElem: WDElem, parentElem: WDElem) {
+    replaceElem.attr(
+      "WD-40-disable", "true"
+    );
     this.elem.replaceWith(replaceElem);
     parentElem.append(this.elem);
   }
